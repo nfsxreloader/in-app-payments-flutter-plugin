@@ -197,6 +197,19 @@ static NSString *const FSQIPOnBuyerVerificationErrorEventName = @"onBuyerVerific
     result(nil);
 }
 
+- (void)cancelCardEntry:(FlutterResult)result
+{
+    UIViewController *rootViewController = UIApplication.sharedApplication.keyWindow.rootViewController;
+
+    if ([rootViewController isKindOfClass:[UINavigationController class]]) {
+        [rootViewController.navigationController popViewControllerAnimated:YES];
+    } else {
+        [rootViewController dismissViewControllerAnimated:YES completion:nil];
+    }
+
+    result(nil);
+}
+
 - (void)showCardNonceProcessingError:(FlutterResult)result errorMessage:(NSString *)errorMessage
 {
     if (self.completionHandler) {

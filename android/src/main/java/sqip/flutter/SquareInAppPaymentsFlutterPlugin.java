@@ -65,6 +65,8 @@ public class SquareInAppPaymentsFlutterPlugin implements MethodCallHandler, Flut
       cardEntryModule.startGiftCardEntryFlow(result);
     } else if (call.method.equals("completeCardEntry")) {
       cardEntryModule.completeCardEntry(result);
+    } else if (call.method.equals("cancelCardEntry")) {
+      cardEntryModule.cancelCardEntry(result);
     } else if (call.method.equals("showCardNonceProcessingError")) {
       String errorMessage = call.argument("errorMessage");
       cardEntryModule.showCardNonceProcessingError(result, errorMessage);
