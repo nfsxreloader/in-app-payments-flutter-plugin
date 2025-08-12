@@ -212,6 +212,10 @@ class InAppPayments {
     await _channel.invokeMethod('completeCardEntry');
   }
 
+  static Future cancelCardEntry() async {
+    await _channel.invokeMethod('cancelCardEntry');
+  }
+
   static Future showCardNonceProcessingError(String errorMessage) async {
     var params = <String, dynamic>{
       'errorMessage': errorMessage,

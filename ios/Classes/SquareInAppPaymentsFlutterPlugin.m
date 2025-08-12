@@ -82,6 +82,8 @@ FlutterMethodChannel *_channel;
             contactMap:contactMap];
     } else if ([@"completeCardEntry" isEqualToString:call.method]) {
         [self.cardEntryModule completeCardEntry:result];
+    } else if ([@"cancelCardEntry" isEqualToString:call.method]) {
+        [self.cardEntryModule cancelCardEntry:result];
     } else if ([@"showCardNonceProcessingError" isEqualToString:call.method]) {
         [self.cardEntryModule showCardNonceProcessingError:result errorMessage:call.arguments[@"errorMessage"]];
     } else if ([@"setFormTheme" isEqualToString:call.method]) {

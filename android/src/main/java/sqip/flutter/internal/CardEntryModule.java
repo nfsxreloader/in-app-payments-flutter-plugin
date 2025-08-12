@@ -145,6 +145,10 @@ public final class CardEntryModule {
     result.success(null);
   }
 
+  public void cancelCardEntry(MethodChannel.Result result) {
+    completeCardEntry(result);
+  }
+
   public void showCardNonceProcessingError(MethodChannel.Result result, String errorMessage) {
     reference.set(new CardEntryActivityCommand.ShowError(errorMessage));
     countDownLatch.countDown();
